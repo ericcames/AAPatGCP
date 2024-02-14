@@ -2,9 +2,8 @@
 - name: Delete a Virtual Private (VPC) Cloud at GCP
   hosts: localhost
   connection: local
-  gather_facts: false
 
-  tasks:  
+  tasks:
 
     - name: Ensure the vpc is gone
       register: network
@@ -14,6 +13,7 @@
         auth_kind: "{{ gcp_cred_kind }}"
         state: "{{ state }}"
 
-    - name: print shit out
+    - name: Print shit out
       ansible.builtin.debug:
         var: network
+...
